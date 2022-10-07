@@ -1,0 +1,46 @@
+@import "./base.css";
+
+.container-box {
+  @apply container px-6 mx-auto;
+}
+
+a.router-link-exact-active,
+a.router-link-active {
+  @apply rounded-sm bg-white/10 dark:text-amber-400 text-neutral-600;
+}
+
+.button {
+  @apply inline-flex items-center justify-center gap-3 px-3 py-2 font-semibold rounded-md w-fit;
+}
+.button[data-style-type="solid"] {
+  @apply font-semibold text-black bg-amber-400;
+}
+.button[data-style-type="solid"]:is(:hover, :focus, :active) {
+  @apply text-black bg-amber-500;
+}
+.button[data-style-type="outline"] {
+  @apply border rounded-md border-neutral-500 text-neutral-400;
+}
+.button[data-style-type="outline"]:is(:hover, :focus, :active) {
+  @apply text-white border-amber-400 bg-amber-400/20;
+}
+.button[data-style-type="ghost"] {
+  @apply border rounded-md border-neutral-400/10 text-neutral-400;
+}
+.button[data-style-type="ghost"]:is(:hover, :focus, :active) {
+  @apply text-amber-400 border-amber-400/10 bg-amber-400/5;
+}
+
+input {
+  @apply px-2 py-4 border-none rounded-md outline-none appearance-none bg-amber-100/5;
+}
+input:is(:focus, :active) {
+  @apply ring ring-amber-300/30;
+}
+
+h1 {
+  @apply text-2xl md:text-5xl max-w-[30ch] text-neutral-200;
+}
+h2 {
+  @apply text-xl font-semibold md:text-2xl text-neutral-200;
+}
