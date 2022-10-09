@@ -7,7 +7,7 @@
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M17 8L21 12M21 12L17 16M21 12L3 12"
+      d="M6 18L18 6M6 6L18 18"
       stroke="inherit"
       stroke-width="2"
       stroke-linecap="round"

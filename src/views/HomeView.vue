@@ -4,6 +4,7 @@ import IconPegaSilver from "../components/icons/IconPegaSilver.vue";
 import ServicesSection from "../components/ServicesSection.vue";
 import IconDiscord from "../components/icons/IconDiscord.vue";
 import FooterSection from "../components/FooterSection.vue";
+import CallToAction from "../components/CallToAction.vue";
 </script>
 
 <template>
@@ -37,11 +38,16 @@ import FooterSection from "../components/FooterSection.vue";
             native utility token, VIS (Vigorus).
           </span>
         </div>
-        <IconPegaSilver />
+        <span
+          class="absolute right-[35%] translate-x-1/2 sm:translate-x-0 sm:-right-5 -top-[calc(100%-5px)] sm:-top-10 block"
+        >
+          <IconPegaSilver />
+        </span>
       </div>
     </div>
   </main>
   <ServicesSection />
+  <CallToAction />
   <div class="container-box">
     <hr class="h-1 stroke-[1px] opacity-10 mt-10" />
   </div>

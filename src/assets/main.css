@@ -6,7 +6,11 @@
 
 a.router-link-exact-active,
 a.router-link-active {
-  @apply rounded-sm bg-white/10 dark:text-amber-400 text-neutral-600;
+  @apply rounded-lg bg-white/10 dark:text-amber-400;
+}
+a.router-link-exact-active[data-style-type="ghost"],
+a.router-link-active[data-style-type="ghost"] {
+  @apply bg-transparent dark:text-neutral-300;
 }
 
 .button {
@@ -19,11 +23,25 @@ a.router-link-active {
   @apply text-black bg-amber-500;
 }
 .button[data-style-type="outline"] {
-  @apply border rounded-md border-neutral-500 text-neutral-400;
+  @apply border rounded-md border-neutral-500/10 text-neutral-400;
+}
+.button[data-style-type="outline"] svg {
+  @apply stroke-neutral-600;
 }
 .button[data-style-type="outline"]:is(:hover, :focus, :active) {
-  @apply text-white border-amber-400 bg-amber-400/20;
+  @apply text-amber-400 border-amber-400/10 bg-amber-400/5;
 }
+
+.button[data-style-type="outline"]:is(:hover, :focus, :active) > svg {
+  @apply text-amber-400 stroke-amber-400;
+}
+.button[data-style-type="outline"]:is(:disabled),
+.button[data-style-type="outline"]:is(:disabled) svg,
+.button[data-style-type="outline"]:is(:disabled):is(:hover, :focus, :active),
+.button[data-style-type="outline"]:is(:disabled):is(:hover, :focus, :active) {
+  @apply bg-transparent cursor-not-allowed opacity-90 text-neutral-700 stroke-neutral-700;
+}
+
 .button[data-style-type="ghost"] {
   @apply border rounded-md border-neutral-400/10 text-neutral-400;
 }
@@ -32,7 +50,7 @@ a.router-link-active {
 }
 
 input {
-  @apply px-2 py-4 border-none rounded-md outline-none appearance-none bg-amber-100/5;
+  @apply px-4 py-4 border-none rounded-md outline-none appearance-none bg-amber-100/5;
 }
 input:is(:focus, :active) {
   @apply ring ring-amber-300/30;
@@ -43,4 +61,15 @@ h1 {
 }
 h2 {
   @apply text-xl font-semibold md:text-2xl text-neutral-200;
+}
+
+/* we will explain what these classes do next! */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
